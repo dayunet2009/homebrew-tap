@@ -37,8 +37,8 @@ class Cloudnet < Formula
   service do
     run opt_bin/"cloudnetd"
     keep_alive true
-    log_path var/"log/cloudnetd.log"
-    error_log_path var/"log/cloudnetd.log"
+    log_path var/"log/cloudnetd.out.log"
+    error_log_path var/"log/cloudnetd.err.log"
   end
 
   test do
