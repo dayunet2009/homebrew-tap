@@ -12,7 +12,7 @@ class Cloudnet < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://cnet.dayunet.com/pkgs/stable/macos/cloudnet_1.22.3_amd64.zip"
-      sha256 "9ff546de39483ab13d90525c8af11db4a64933047ce352c7fbe97a78c9410f69"
+      sha256 "fd193eb95ea6e97b44ed25fdfc0e23562ac50bc6f23a63aa5f45315acfe4aeb4"
 
       def install
         bin.install "cnet"
@@ -24,7 +24,7 @@ class Cloudnet < Formula
     end
     if Hardware::CPU.arm?
       url "https://cnet.dayunet.com/pkgs/stable/macos/cloudnet_1.22.3_arm64.zip"
-      sha256 "7040c725cd01003cc779c4f0309da359e590e19a46160683e0cd3fd83c3825d2"
+      sha256 "f6f18b362d12ad017b74cb2031316047bbcf017fc9272c856c8db5f2edf96a76"
 
       def install
         bin.install "cnet"
@@ -35,7 +35,7 @@ class Cloudnet < Formula
   end
 
   service do
-    run opt_bin/"cloudnetd"
+    run [opt_bin/"cloudnetd", "-socks5-server", "0.0.0.0:7889"]
     keep_alive true
     log_path var/"log/cloudnetd.log"
     error_log_path var/"log/cloudnetd.log"
