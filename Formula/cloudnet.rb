@@ -35,7 +35,7 @@ class Cloudnet < Formula
   end
 
   service do
-    run [opt_bin/"cloudnetd", "-socks5-server", "0.0.0.0:7889"]
+    run [opt_bin/"cloudnetd"]
     keep_alive true
     log_path var/"log/cloudnetd.log"
     error_log_path var/"log/cloudnetd.log"
