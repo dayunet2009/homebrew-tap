@@ -1,7 +1,7 @@
 class Cloudnet < Formula
   desc "A smart cloud network system!"
-  homepage "https://cnet.dayunet.com"
-  version "1.22.3"
+  homepage "https://cloudnet.world"
+  version "1.36.2"
   license "MIT"
 
   depends_on "curl" => :recommended
@@ -11,8 +11,8 @@ class Cloudnet < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://cnet.dayunet.com/pkgs/stable/macos/cloudnet_1.22.3_amd64.zip"
-      sha256 "d65d24e77cc8745f572f31f2a31071373abac22850a718ccfcb3964d0a587355"
+      url "https://pkgs.dayunet.com/stable/macos/cloudnet_1.36.2_amd64.zip"
+      sha256 "eb116d5cd47ae094c3c7a61756c6dedb4f67e2ad6493cb31abf20bb92375c259"
 
       def install
         bin.install "cnet"
@@ -23,8 +23,8 @@ class Cloudnet < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://cnet.dayunet.com/pkgs/stable/macos/cloudnet_1.22.3_arm64.zip"
-      sha256 "af42d2e7334d4cadedc5eff3855c3e7b05bf95de94ec8f3e8cd5d63f738832c5"
+      url "https://pkgs.dayunet.com/stable/macos/cloudnet_1.36.2_arm64.zip"
+      sha256 "7d2190962e1cc3828996ebef5830670c7b4815806998f13bb9195d236733634a"
 
       def install
         bin.install "cnet"
@@ -35,10 +35,10 @@ class Cloudnet < Formula
   end
 
   service do
-    run [opt_bin/"cloudnetd"]
+    run [opt_bin / "cloudnetd"]
     keep_alive true
-    log_path var/"log/cloudnetd.log"
-    error_log_path var/"log/cloudnetd.log"
+    log_path var / "log/cloudnetd.log"
+    error_log_path var / "log/cloudnetd.log"
   end
 
   test do
