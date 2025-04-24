@@ -12,7 +12,7 @@ class Cloudnet < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://pkgs.cloudnet.world/stable/macos/cloudnet_1.36.2.13_amd64.zip"
-      sha256 "181fd61a5ad9d234ba9ca864191c88fda44743e4f39c98b5c1d27573b45bfd8e"
+      sha256 "1919603b05830cb79c85e4958b3face342bf2d59b03e93a73e38ae95544865ab"
 
       def install
         bin.install "cnet"
@@ -24,7 +24,7 @@ class Cloudnet < Formula
     end
     if Hardware::CPU.arm?
       url "https://pkgs.cloudnet.world/stable/macos/cloudnet_1.36.2.13_arm64.zip"
-      sha256 "de3872516669295ba34780e1afc2e3b0eb3e9b20b9fe736889946d88f724ccdb"
+      sha256 "670d52e8d8bc3b9067d51ae98bb113cf3b73aa94396d90f45911b7ac1b5c7d9d"
 
       def install
         bin.install "cnet"
